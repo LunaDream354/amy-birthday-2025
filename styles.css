@@ -1,0 +1,41 @@
+
+body {
+    background-color: #007f7f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin:0;
+  }
+  
+  .monitor_frame {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
+  .monitor_overlay{
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url('resources/monitor.png') no-repeat center/cover;
+    background-size: contain;
+    pointer-events: none;
+  }
+  .screen{
+    position: relative;
+    margin: 2% auto;
+    width: 123vh;
+    height: 92%;
+  }
+  .taskbar_background{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url("resources/taskbar_bar.png");
+    height: 56px;
+    width: 100%;
+  }
+  .hidden {
+    display: none;
+  }

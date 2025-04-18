@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retro Monitor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="monitor_frame">
+        <div class="monitor_overlay"></div>
+        <div class="screen">
+            <img src = "resources/start.png" id = "start_menu" class="hidden">
+            <div class="taskbar_background">
+                <img src="resources/taskbar_start.png" class="windows_menu_btn" data-open="start_menu">
+                <img src="resources/taskbar_div.png">
+                <img src="resources/taskbar_end.png" style="position: absolute;right : 0;">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
