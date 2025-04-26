@@ -7,24 +7,22 @@ let birdAcceleration = 0;
 let gravity = 2;
 let isGameOver = false;
 let score = 0;
-let parent_id= "";
 function jump(e) {
-  if (e.key == "Escape"){
-    window.postMessage("closeIframe", "localhost");
-    location.reload()
-  }
+  if (e.key == "Escape")
+    return
   if (isGameOver) 
     return
-  if (birdAcceleration >= -10){
+  if (birdAcceleration >= -10)
     birdAcceleration = -40;
-  }
+  
 }
 
 function createPipe() {
   if (isGameOver) return;
   const minGap = percentHeightToVH(400,bird)
-  const maxGap = percentHeightToVH(800,bird)
-  const pipeGap = Math.floor(Math.random()*(100-maxGap))+minGap
+  const maxGap = percentHeightToVH(200,bird)
+  const pipeGap = Math.floor(Math.random()*(maxGap))+minGap
+  
   const pipeGapMiddle = Math.floor(Math.random()*(100 - pipeGap) + 10)
   const pipeTop = document.createElement("div");
   const pipeBottom = document.createElement("div");
@@ -65,8 +63,7 @@ function createPipe() {
 
 function endGame() {
   isGameOver = true;
-  //alert("Game Over! Your score: " + score);
-  location.reload();
+  alert("Game Over! Your score: " + score);
 }
 
 function gameLoop() {

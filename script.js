@@ -48,10 +48,8 @@ document.querySelectorAll('.menu_item').forEach((btn)=>{
 		if ('window' in btn.dataset){
 			item = document.querySelector('.window[data-window_id="'+btn.dataset.window+'"]')
 			document.querySelector('#start').dispatchEvent(event_close)
-			if(item.classList.contains('hidden'))
-				item.querySelector('iframe').contentWindow.postMessage('start','*')
-			else
-				item.item.querySelector('iframe').contentWindow.postMessage('stop','*')
+			document.addEventListener("keydown", jump);
+			item.querySelector('iframe').contentWindow.postMessage('start','*')
 			item.classList.toggle('hidden')
 		}
 	})
@@ -60,6 +58,14 @@ document.querySelectorAll('.menu_item').forEach((btn)=>{
 	} 
 	function event_mouse_exit(e){
 		btn.style.filter = ''
+	}
+	function jump(e){
+		if(e.key !='Escape')
+			return
+		item = document.querySelector('.window[data-window_id="'+btn.dataset.window+'"]')
+		item.querySelector('iframe').contentWindow.postMessage('stop','*')
+		item.classList.add('hidden')
+		document.removeEventListener("keydown", jump)
 	}
 })
 
