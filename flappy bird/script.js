@@ -33,7 +33,7 @@ function createPipe() {
   pipeTop.classList.add("pipe", "pipe-top");
   pipeBottom.classList.add("pipe", "pipe-bottom");
   pipeTop.style.height = (100 - pipeGapMiddle - pipeGap/2 )+ "vh";
-  pipeBottom.style.height = (100 - pipeGapMiddle - pipeGap/2 ) - pipeGap/2 + "vh";
+  pipeBottom.style.height = (100 -pipeGap - pipeGapMiddle) + "vh";
   
   let pipeLeft = 100.0 + percentWidthToVW(100,pipeTop);
   pipeTop.style.left = pipeLeft + "vw";
