@@ -43,6 +43,14 @@ document.querySelectorAll('.menu_item').forEach((btn)=>{
 			document.querySelector('#start').dispatchEvent(event_close)
 			item.dispatchEvent(event_open)
 			item.classList.remove('hidden')
+			
+			document.addEventListener('keydown',close)
+			function close(e){
+				if (e.key != 'Escape')	return
+				item.dispatchEvent(event_close)
+				item.classList.add('hidden')
+				document.removeEventListener('keydown',close)
+			}
 		}
 	})
 	function event_mouse_enter(e){
