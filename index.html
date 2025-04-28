@@ -14,7 +14,7 @@
 			<img class="monitor_overlay" src="resources/monitor.png">
 			<div class="screen">
 				<div id="menu_start" class="menu hidden">
-					<div class="menu_item" data-window="1">
+					<div class="menu_item" data-window="flappybird">
 						<img src="resources/menu/icons/icon 1.png" class="icon">
 						<span class="item_text">Icon 1</span>
 					</div>
@@ -39,15 +39,15 @@
 					<img src="resources/taskbar/end.png" style="position: absolute;right : 0;">
 				</div>
 			</div>
-			<div class="window hidden" data-window_id="1">
-				<iframe src="flappy bird/index.html" style="width: 100%; height: 100%;"></iframe>
+			<div id ='window_flappybird' class="window hidden">
+				<div id="game-container">
+					<div id="bird"></div>
+					<div id="score">0</div>
+				</div>
+				
+				<script src="flappy bird/script.js"></script>
+				<link rel="stylesheet" href="flappy bird/style.css">
 			</div>
-			<iframe src="flappy bird/index.html" class="window hidden"
-				data-window_id="2"></iframe>
-			<iframe src="flappy bird/index.html" class="window hidden"
-				data-window_id="3"></iframe>
-			<iframe src="flappy bird/index.html" class="window hidden"
-				data-window_id="4"></iframe>
 		</div>
 	</body>
 

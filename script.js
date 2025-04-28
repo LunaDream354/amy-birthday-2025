@@ -1,21 +1,14 @@
 
 //width = 1623 - 297
 //height = 1038 - 37
-
+	// item = document.querySelector('.window[data-window_id="'+windowOpen+'"]')
+	// item.querySelector('iframe').contentWindow.postMessage('stop','*')
+	// item.classList.add('hidden')
 
 document.querySelectorAll('.menu_item').forEach((btn)=>{
 	const event_open = new Event('open')
 	const event_close = new Event('close')
-	btn.addEventListener("message", function (event) {
-		if (event.origin !== "localhost") return;
 	
-		if (event.data === "closeIframe") {
-			item = document.querySelector('.window[data-window_id="'+btn.dataset.window+'"]')
-			item.classList.add('hidden')
-		}
-	  });
-	
-
 	btn.addEventListener('open',(e)=>{
 		btn.addEventListener('mouseover',event_mouse_enter)
 		btn.addEventListener('mouseleave',event_mouse_exit)
@@ -46,11 +39,10 @@ document.querySelectorAll('.menu_item').forEach((btn)=>{
 			}
 		}
 		if ('window' in btn.dataset){
-			item = document.querySelector('.window[data-window_id="'+btn.dataset.window+'"]')
+			item = document.querySelector('#window_'+btn.dataset.window)
 			document.querySelector('#start').dispatchEvent(event_close)
-			document.addEventListener("keydown", jump);
-			item.querySelector('iframe').contentWindow.postMessage('start','*')
-			item.classList.toggle('hidden')
+			item.dispatchEvent(event_open)
+			item.classList.remove('hidden')
 		}
 	})
 	function event_mouse_enter(e){
@@ -58,14 +50,6 @@ document.querySelectorAll('.menu_item').forEach((btn)=>{
 	} 
 	function event_mouse_exit(e){
 		btn.style.filter = ''
-	}
-	function jump(e){
-		if(e.key !='Escape')
-			return
-		item = document.querySelector('.window[data-window_id="'+btn.dataset.window+'"]')
-		item.querySelector('iframe').contentWindow.postMessage('stop','*')
-		item.classList.add('hidden')
-		document.removeEventListener("keydown", jump)
 	}
 })
 
