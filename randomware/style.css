@@ -1,0 +1,8 @@
+#window_randomware{
+    overflow: hidden;
+}
+#window_randomware .effect{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+}

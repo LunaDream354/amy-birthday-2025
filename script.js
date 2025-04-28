@@ -43,7 +43,7 @@ document.querySelectorAll('.menu_item').forEach((btn)=>{
 			document.querySelector('#start').dispatchEvent(event_close)
 			item.dispatchEvent(event_open)
 			item.classList.remove('hidden')
-			
+			item.focus()
 			document.addEventListener('keydown',close)
 			function close(e){
 				if (e.key != 'Escape')	return
