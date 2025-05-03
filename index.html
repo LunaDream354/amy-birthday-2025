@@ -7,9 +7,12 @@
 		<title>Retro Monitor</title>
 		<link rel="stylesheet" href="style.css" />
 		<script defer src="script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+		<script src="audio.js"></script>
 	</head>
 
 	<body>
+
 		<div class="monitor_frame">
 			<img class="monitor_overlay" src="resources/monitor.png">
 			<div class="screen">
@@ -22,15 +25,10 @@
 						<img src="resources/menu/icons/icon 2.png" class="icon">
 						<span class="item_text">Icon 2</span>
 					</div>
-					<div class="menu_item" data-window="3">
+					<div class="menu_item" data-window="nose">
 						<img src="resources/menu/icons/icon 3.png" class="icon">
 						<span class="item_text">Icon 3</span>
 					</div>
-					<div class="menu_item" data-window="4">
-						<img src="resources/menu/icons/icon 4.png" class="icon">
-						<span class="item_text">Icon 4</span>
-					</div>
-					<!-- <img src="resources/menu/start/background.png" class="menu_background"> -->
 				</div>
 				<div class="taskbar_background">
 					<img src="resources/taskbar/start.png" id="start" class="menu_item root"
@@ -51,7 +49,17 @@
 				<script src="flappy bird/script.js"></script>
 				<link rel="stylesheet" href="flappy bird/style.css">
 			</div>
-			
+			<div id = 'window_nose' class="window hidden">
+				<div id="score_nose">0</div>
+				<div id="game_container_nose">
+						
+				</div>
+				<div class="nose_hole" style="position:absolute; top: 19%; left: 49%; width:8%; height: 9%;"></div>
+				<div class="nose_hole" style="position:absolute; top: 30%; left: 43%; width:5%; height: 14%;"></div>
+				<img src="nose/resources/amy.jpg" style="width: 100%; height:100%;">
+				<script src="nose/script.js"></script>
+				<link rel="stylesheet" href="nose/style.css">
+			</div>
 		</div>
 	</body>
 

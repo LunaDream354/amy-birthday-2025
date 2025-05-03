@@ -52,6 +52,9 @@ function flappybird(){
         score++;
         pipeTop.classList.add("counted")
         scoreDisplay.textContent = score;
+        if (score == 5){
+          //HERE RAS
+        }
       }
       pipeLeft -= 1;
       pipeTop.style.left = pipeLeft + "%";
