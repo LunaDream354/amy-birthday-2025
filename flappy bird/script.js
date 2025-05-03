@@ -6,7 +6,7 @@ function flappybird(){
 
   let birdTop = 60;
   let birdAcceleration = 0;
-  let gravity = 2;
+  let gravity = 4;
   let isGameOver = false;
   let score = 0;
   const event_open = new Event('open')
@@ -16,7 +16,7 @@ function flappybird(){
     if (isGameOver) 
       return
     if (birdAcceleration >= -10)
-      birdAcceleration = -40;  
+      birdAcceleration += -80;  
   }
 
   function createPipe() {
@@ -41,6 +41,10 @@ function flappybird(){
     pipeBottom.style.left = pipeLeft + "%";
     
     const topInterval = setInterval(() => {
+      if (pipeLeft == null){
+        clearInterval(topInterval)
+        return
+      }
       if (pipeLeft <= -percentWidthToVW(100,pipeTop)) {
         clearInterval(topInterval);
         gameContainer.removeChild(pipeTop);
